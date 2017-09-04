@@ -11,7 +11,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "dev": "webpack-dev-server --config config/webpack.dev.js --open --progress --profile --watch --content-base src/",
+    "dev": "webpack-dev-server --config config/webpack.dev.js --progress --profile --watch --content-base client/",
     "start": "npm run server:dev"
   },
   "keywords": [
