@@ -3,11 +3,12 @@ var webpack = require('webpack');
 
 const CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const DefinePlugin = require('webpack/lib/DefinePlugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
 module.exports = function (options) {
-  isProd = options.env === 'prod';
+  let ENV = JSON.stringify(options.env);
 
   return {
     entry: {
@@ -41,9 +42,13 @@ module.exports = function (options) {
       ]
     },
     plugins: [
+      new webpack.DefinePlugin({
+        'ENV': ENV,
+        'process.env.ENV': ENV,
+        'process.env.NODE_ENV': ENV,
+      }),
       new webpack.ContextReplacementPlugin(
-        // The (\\|\/) piece accounts for path separators in *nix and Windows
-        /angular(\\|\/)core/,
+        /angular(\\|\/)core/, // (\\|\/) for *nix and Windows
         helpers.root('./src'), // location of your src
         { }
       ),
@@ -54,7 +59,7 @@ module.exports = function (options) {
         template: 'src/index.html',
         inject: 'body',
         title: 'Angular Nimble Starter',
-        favicon: 'assets/images/favicon.png',
+        favicon: 'client/assets/images/favicon.png',
         showErrors: true
       })
     ],

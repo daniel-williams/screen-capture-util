@@ -3,7 +3,6 @@ var helpers = require('./helpers');
 
 const webpack = require('webpack');
 const webpackMerge = require('webpack-merge');
-const DefinePlugin = require('webpack/lib/DefinePlugin');
 
 const ENV = process.env.ENV = process.env.NODE_ENV = 'dev';
 const HOST = process.env.HOST || 'localhost';
@@ -28,11 +27,6 @@ module.exports = function (options) {
       sourceMapFilename: '[file].map',
     },
     plugins: [
-      new webpack.DefinePlugin({
-        'ENV': JSON.stringify(ENV),
-        'process.env.ENV': JSON.stringify(ENV),
-        'process.env.NODE_ENV': JSON.stringify(ENV),
-      }),
       new webpack.NamedModulesPlugin()
     ],
     devServer: {
