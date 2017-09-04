@@ -9,13 +9,11 @@ const ENV = process.env.ENV = process.env.NODE_ENV = 'dev';
 const HOST = process.env.HOST || 'localhost';
 const PORT = process.env.PORT || 3000;
 const PUBLIC = process.env.PUBLIC_DEV || HOST + ':' + PORT;
-const HMR = helpers.hasProcessFlag('hot');
 const METADATA = {
   host: HOST,
   port: PORT,
   public: PUBLIC,
-  ENV: ENV,
-  HMR: HMR
+  ENV: ENV
 };
 
 
@@ -24,7 +22,7 @@ module.exports = function (options) {
     devtool: 'cheap-module-source-map',
     output: {
       path: helpers.root('dist'),
-      publicPath: 'http://localhost:3000/',
+      publicPath: `http://${METADATA.host}:${METADATA.port}/`,
       filename: '[name].js',
       chunkFilename: '[id].chunk.js',
       sourceMapFilename: '[file].map',
@@ -40,7 +38,6 @@ module.exports = function (options) {
     devServer: {
       port: METADATA.port,
       host: METADATA.host,
-      hot: METADATA.HMR,
       public: METADATA.public,
       historyApiFallback: true,
       watchOptions: {

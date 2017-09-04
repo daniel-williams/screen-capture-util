@@ -1,15 +1,26 @@
 {
-  "name": "ng-nimble",
+  "name": "angular-nimble",
   "version": "1.0.0",
-  "main": "index.js",
-  "author": "Daniel James Williams <v-wildan@microsoft.com>",
+  "author": {
+    "name": "Daniel James Williams",
+    "email": "mail@danielwilliams.us"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/daniel-williams/angular-nimble"
+  },
   "license": "MIT",
   "scripts": {
-    "server:dev": "webpack-dev-server --config config/webpack.dev.js --open --progress --profile --watch --content-base src/",
-    "server:dev:hmr": "webpack-dev-server --config config/webpack.dev.js --open --progress --profile --watch --hot --inline --content-base src/",
-    "start": "npm run server:dev",
-    "start:hmr": "npm run server:dev:hmr"
+    "dev": "webpack-dev-server --config config/webpack.dev.js --open --progress --profile --watch --content-base src/",
+    "start": "npm run server:dev"
   },
+  "keywords": [
+    "Angular",
+    "redux",
+    "seed",
+    "starter",
+    "webpack"
+  ],
   "dependencies": {
     "@angular-redux/router": "6.3.0",
     "@angular-redux/store": "6.5.4",
@@ -23,8 +34,6 @@
     "@angular/platform-browser-dynamic": "4.2.4",
     "@angular/platform-server": "4.2.4",
     "@angular/router": "4.2.4",
-    "@angularclass/hmr": "^2.1.3",
-    "@angularclass/hmr-loader": "^3.0.4",
     "core-js": "2.4.1",
     "redux": "3.6.0",
     "rxjs": "^5.4.3",
