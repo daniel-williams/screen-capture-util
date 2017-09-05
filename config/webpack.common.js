@@ -37,7 +37,6 @@ module.exports = function (options) {
         {
           test: /\.scss$/,
           use: ['to-string-loader', 'css-loader', 'sass-loader'],
-          exclude: [helpers.root('src', 'styles')]
         },
       ]
     },
@@ -53,7 +52,7 @@ module.exports = function (options) {
         { }
       ),
       new CommonsChunkPlugin({
-        name: ['app', 'vendor', 'polyfills']
+        names: ['app', 'vendor', 'polyfills'],
       }),
       new HtmlWebpackPlugin({
         template: 'src/index.html',

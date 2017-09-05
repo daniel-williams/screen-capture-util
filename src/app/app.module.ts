@@ -3,28 +3,28 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserModule }  from '@angular/platform-browser';
 
+import { AppRoutingModule } from './app-routing.module';
+
 import { App } from './app.component';
-import { SomeChild } from './someChild/some-child.component';
+import { SiteNav } from './site-nav';
+import { SiteStyles } from './site-styles';
+
 
 @NgModule({
+  bootstrap: [App],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     ReactiveFormsModule,
+
+    AppRoutingModule,
   ],
   declarations: [
     App,
-    SomeChild,
+    SiteNav,
+    SiteStyles,
   ],
-  providers: [
-
-  ],
-  exports: [
-
-  ],
-  bootstrap: [
-    App,
-  ]
+  providers: []
 })
 export class AppModule { }
