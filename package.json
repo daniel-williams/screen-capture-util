@@ -12,7 +12,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "webpack-dev-server --config config/webpack.dev.js --progress --profile --watch --content-base client/",
-    "start": "npm run server:dev"
+    "start": "npm run dev",
+    "build:prod": "rimraf dist && webpack --config config/webpack.production.js --progress --profile --bail"
   },
   "keywords": [
     "Angular",

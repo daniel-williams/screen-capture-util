@@ -27,7 +27,6 @@ module.exports = function (options) {
       sourceMapFilename: '[file].map',
     },
     plugins: [
-      new webpack.NamedModulesPlugin()
     ],
     devServer: {
       port: METADATA.port,
