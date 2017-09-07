@@ -1,0 +1,24 @@
+<div class='directory-wrap'>
+  <h2>Videos</h2>
+  <div>
+    <select (change)='onChange($event)'>
+      <option value=''></option>
+      <option [value]='item.video' *ngFor='let item of items; let i = index'>{{item.video}}</option>
+    </select>
+  </div>
+  <!-- <div>
+    <input type='text' [value]='saverFilename'>
+  </div> -->
+</div>
+<div class='capture-util'>
+  <video controls #video>
+    <source src='' type='video/mp4' #source>
+  </video>
+  <div style='text-align:center;'>
+    <button type='button' (click)="capture()">Capture</button>
+  </div>
+  <div class='canvas-wrap'>
+    <canvas #canvas></canvas>
+    <img #canvasMirror src="" />
+  </div>
+</div>

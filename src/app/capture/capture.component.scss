@@ -1,0 +1,74 @@
+:host {
+  position: relative;
+  display: flex;
+
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.directory-wrap {
+  margin-left: 25px;
+}
+
+input,
+select,
+button {
+  margin: 10px 0;
+  padding: 5px 10px;
+  width: 100%;
+
+  font-size: 20px;
+
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+video {
+  width: 100%;
+  height: auto;
+}
+
+.capture-util {
+  display: flex;
+
+  padding-left: 50px;
+  max-width: 500px;
+
+  flex-direction: column;
+  flex-grow: 100;
+
+  button {
+    padding: 10px 30px;
+  }
+}
+
+.canvas-wrap {
+  position: relative;
+  overflow: hidden;
+
+  height: 0;
+
+  canvas {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 1;
+  }
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 2;
+  }
+}
+
+.saver-wrap {
+  height: 0;
+
+  line-height: 0;
+}

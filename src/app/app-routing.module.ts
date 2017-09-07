@@ -14,6 +14,10 @@ const routes: Routes = [
     loadChildren: './lazy/lazy.module#LazyModule',
   },
   {
+    path: 'capture',
+    loadChildren: './capture/capture.module#CaptureModule',
+  },
+  {
     path: '**',
     redirectTo: ''
   }
